@@ -2,16 +2,96 @@
 
 
 <!DOCTYPE html>
+@{
+    var rate = Model.Rating;
+    var star = rate;
+}
 <html>
 <head>
     <title>Movie</title>
 </head>
-<body>
-    <h2>Movie Details</h2>
-    <p>Movie ID: @Model.Id</p>
-    <p>Movie Name: @Model.Name</p>
-    <p>Rating: @Model.Rating</p>
-    <p>Release Year: @Model.ReleaseYear</p>
-    <p>Genre: @Model.Genre</p>
-</body>
+    <body>
+    
+    
+      
+    <div class="getmovieInfo">
+        <div class="getmovieDetails">
+            <h1>Movie Details <i class="bi bi-film"></i></h1>
+            <p1>Movie Name</p1>
+            <p>@Model.Name</p>
+            <p1>Rating</p1>
+            <p>
+                @Model.Star   
+                @if (rate >= 5)
+                {
+                    @Model.Star
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                }
+                else if (rate > 3 && rate < 5)
+                {
+                    @Model.Star
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star"></span>
+                }
+                else if (rate > 2 && rate < 4)
+                {
+                    @Model.Star
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star"></span>
+                    <span class="bi bi-star"></span>
+                }
+                else if (rate > 1 && rate < 3)
+                {
+                    @Model.Star
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star"></span>
+                    <span class="bi bi-star"></span>
+                    <span class="bi bi-star"></span>
+                }
+                else
+                {
+                    @Model.Star
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star"></span>
+                    <span class="bi bi-star"></span>
+                    <span class="bi bi-star"></span>
+                    <span class="bi bi-star"></span>
+                }
+            </p>
+            <p1>Release Year</p1>
+            <p>@Model.ReleaseYear</p>
+            <p1>Genre</p1>
+            <p>@Model.Genre</p>
+            
+        </div>
+        <div class="getmovieCover"><img src="@Url.Content(Model.Cover)" alt="Product Image" /></div>
+        
+    </div>
+
+    <div class="moviebg">
+        <iframe width="1000" height="680" src="@Model.Link?&autoplay=1&start=30&end=80&autopause=0" muted  class="back-video"></iframe>
+    </div>
+
+    <div class="watchbutton">
+        <a class="btn btn-primary" href="@Model.Link" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+            <i class="bi bi-play-fill"></i> Watch
+        </a>
+    </div>
+    <div class="getmovieContent">
+        <h2>Info</h2>
+        <p2>@Model.Content</p2>
+        </div>
+
+    </body>
+
 </html>

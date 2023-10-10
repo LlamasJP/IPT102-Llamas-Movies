@@ -10,6 +10,9 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
+    <Content Remove="wwwroot\Image\Cover1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Views\Movies\" />
   </ItemGroup>
   <ItemGroup>

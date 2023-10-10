@@ -4,28 +4,40 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-<table>
+<div class="movies-class">
+<table class="movies-table"> 
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Rating</th>
-            <th>Release Year</th>
-            <th>Genre</th>
+           @*  <th>ID</th> *@
+           @*  <th>Name</th> *@
+            @* <th>Rating</th>
+            <th>Release Year</th> *@
+            @* <th>Genre</th>
+            <th>Cover</th> *@
         </tr>
-    </thead>
+    </thead> 
+
     <tbody>
+    
         @foreach (var movie in Model)
         {
+          
             <tr>
-                <td>@movie.Id</td>
-                <td ><a href = "/movies/getmovie/@movie.Id" > @movie.Name </a></td>
-                <td>@movie.Rating</td>
-                <td>@movie.ReleaseYear</td>
+                @* <td>@movie.Id</td> *@
+                @* <td>@movie.Rating</td>
+                <td>@movie.ReleaseYear</td> *@
+                <td>
+                    <div class="movieCover"><a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
+                </td>
+                <td><a href="/movies/getmovie/@movie.Id"> @movie.Name </a></td>
                 <td>@movie.Genre</td>
             </tr>
+          
         }
+     
     </tbody>
-</table>
+    </table>
+</div>
+ 
+
 

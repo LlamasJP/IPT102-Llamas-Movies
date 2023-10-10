@@ -10,6 +10,7 @@
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  position: absolute;
 }
 
 html {
@@ -17,6 +18,155 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+.navbar {
+    background-color: Black;
 }
+
+.navbar-brand h1{
+    color: White;
+    font-size:25px;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: black; 
+}
+
+
+.navbar-collapse {
+}
+
+    .navbar-collapse a:hover {
+        background-color: #EEEDED;
+    }
+    .navbar-collapse p {
+        padding-top: 10px;
+        color: white;
+        font-size:20px;
+    }
+
+
+
+.MovieList {
+    display: flex;
+    text-transform: capitalize;
+    text-align: center;
+    border: 3px solid #000000;
+}
+.movielist-1 {
+    border: 3px solid #000000;
+    padding: 70px 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 30px;
+}
+.movieCover {
+    align-items:center;
+    
+}
+.movies-table {
+    width: 100%;  
+}
+iframe {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.back-video {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+}
+
+.movies-table th {  
+    padding: 8px 12px;
+    background: #ffd7d7;
+}
+
+    .movies-table td {
+        padding: 4px 8px; 
+        text-align: center;
+        color: white;
+        font-size:30px;
+    }
+.movies-table a {
+    color: white;
+    text-decoration:none;
+}
+
+.getmovieInfo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.getmovieDetails {
+    border: 1px solid black;
+    margin-left: 2vh
+}
+    .getmovieDetails h1 {
+        color: white;
+        font-size: 30px;
+        padding-top: -50px;
+        padding-bottom: -50px;
+    }
+    .getmovieDetails p {
+        color: white;
+        padding-top: 0px;
+        
+    }
+    .getmovieDetails p1 {
+        color: #808080;
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+
+.getmovieCover {
+    justify-self: center;
+    right: 10px;
+    border: 10px solid black;
+    position: relative;
+    margin-right: 2vh;
+   
+}
+    .getmovieCover img {
+        position: relative;
+        height: 40vh;
+        width: 35vh;
+    }
+.watchbutton {
+    position: relative;
+    margin-top: 102vh;
+    display: flex;
+    justify-content: center;
+}
+
+.getmovieContent {
+    border: 1px solid black;
+    background-color: black;
+    opacity: .9;
+    text-align: justify;
+    text-justify: inter-word;
+    text-indent: each-line;
+}
+    .getmovieContent h2 {
+        position: relative;
+        color: white;
+    }
+    .getmovieContent p2 {
+        color: white;
+        
+        position: relative;
+
+    }
