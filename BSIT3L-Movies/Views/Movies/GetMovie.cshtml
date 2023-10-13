@@ -5,6 +5,8 @@
 @{
     var rate = Model.Rating;
     var star = rate;
+    var mode = Model.Id;
+
 }
 <html>
 <head>
@@ -79,19 +81,47 @@
     </div>
 
     <div class="moviebg">
-        <iframe width="1000" height="680" src="@Model.Link?&autoplay=1&start=30&end=80&autopause=0" muted  class="back-video"></iframe>
+        <video controls="controls" autoplay muted loop>
+            <source src="@Url.Content(Model.Video)" type="video/mp4" class="back-video" />
+        </video>
     </div>
+  
+    <div class="getmovie-action" >
 
-    <div class="watchbutton">
-        <a class="btn btn-primary" href="@Model.Link" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-            <i class="bi bi-play-fill"></i> Watch
-        </a>
+        <div class="rating">
+            <i class="bi bi-star hover-hidden"></i>
+            <i class="bi bi-star-fill hover-show"></i>
+            <i class="bi bi-star hover-hidden"></i>
+            <i class="bi bi-star-fill hover-show"></i>
+            <i class="bi bi-star hover-hidden"></i>
+            <i class="bi bi-star-fill hover-show"></i>
+            <i class="bi bi-star hover-hidden"></i>
+            <i class="bi bi-star-fill hover-show"></i>
+            <i class="bi bi-star hover-hidden"></i>
+            <i class="bi bi-star-fill hover-show"></i>
+           
+            Rate
+        </div>
+        <div class="button2">
+            <a class="btn btn-primary" onclick="window.open('@Url.Content(Model.Link)') " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                <i class="bi bi-play-fill"></i> Watch
+            </a>
+            <a class="btn btn-primary" onclick="window.open('@Url.Action("Random", "Movies", new {Model.Id} )')" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">   
+                <i class="bi bi-file-arrow-down"></i> Download
+            </a>
+        </div>
+        <div class="adding">
+            <a class="btn btn-primary" onclick="window.open('@Url.Action("Random", "Movies", new {Model.Id} )')" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+            <i class="bi bi-plus-square"></i>
+            Favorites
+           </a>
+        </div>
     </div>
     <div class="getmovieContent">
         <h2>Info</h2>
         <p2>@Model.Content</p2>
         </div>
-
+    
     </body>
 
 </html>

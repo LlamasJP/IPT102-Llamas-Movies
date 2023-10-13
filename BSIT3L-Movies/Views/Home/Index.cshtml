@@ -2,42 +2,70 @@
 
 @{
     ViewData["Title"] = "Home Page";
+   
 }
+<div class="Homepage">
 
-<div class="movies-class">
-<table class="movies-table"> 
-    <thead>
-        <tr>
-           @*  <th>ID</th> *@
-           @*  <th>Name</th> *@
-            @* <th>Rating</th>
-            <th>Release Year</th> *@
-            @* <th>Genre</th>
-            <th>Cover</th> *@
-        </tr>
-    </thead> 
-
-    <tbody>
-    
+    <h1>Trending</h1>
+    <div class="movies-class1">
+        
         @foreach (var movie in Model)
         {
-          
-            <tr>
-                @* <td>@movie.Id</td> *@
-                @* <td>@movie.Rating</td>
-                <td>@movie.ReleaseYear</td> *@
-                <td>
-                    <div class="movieCover"><a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
-                </td>
-                <td><a href="/movies/getmovie/@movie.Id"> @movie.Name </a></td>
-                <td>@movie.Genre</td>
-            </tr>
-          
+        <div class="movies-navbar">
+            <div class="movies-nav"><a href="/movies/getmovie/@movie.Id"><img src="@Url.Content(movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
+            <div class="movies-nav"><a href="/movies/getmovie/@movie.Id"> @movie.Name </a></div>
+            <div class="movies-nav"><a> @movie.Genre </a></div>
+        </div>
         }
-     
-    </tbody>
-    </table>
+    </div>
+    <h1>You may also like</h1>
+    <div class="movies-class2">
+        
+        @foreach (var _movie in Model.OrderByDescending(m => m.Id))
+        {
+            <div class="movies-navbar">
+                <div class="movies-nav"><a href="/movies/getmovie/@_movie.Id"><img src="@Url.Content(_movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
+                <div class="movies-nav"><a href="/movies/getmovie/@_movie.Id"> @_movie.Name </a></div>
+                <div class="movies-nav"><a> @_movie.Genre </a></div>
+            </div>
+        }
+    </div>
+    <h1>Highest Rated</h1>
+    <div class="movies-class3">
+
+        @foreach (var _movie in Model.Where(m => m.Rating == 5))
+        {
+            <div class="movies-navbar">
+                <div class="movies-nav"><a href="/movies/getmovie/@_movie.Id"><img src="@Url.Content(_movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
+                <div class="movies-nav"><a href="/movies/getmovie/@_movie.Id"> @_movie.Name </a></div>
+                <div class="movies-nav"><a> @_movie.Genre </a></div>
+            </div>
+        }
+    </div>
+    <h1>Musical</h1>
+    <div class="movies-class4">
+
+        @foreach (var _movie in Model.Where(m => m.Genre == "Action/Musical"))
+        {
+            <div class="movies-navbar">
+                <div class="movies-nav"><a href="/movies/getmovie/@_movie.Id"><img src="@Url.Content(_movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
+                <div class="movies-nav"><a href="/movies/getmovie/@_movie.Id"> @_movie.Name </a></div>
+                <div class="movies-nav"><a> @_movie.Genre </a></div>
+            </div>
+        }
+    </div>
+    <h1>Latest</h1>
+    <div class="movies-class5">
+        @foreach (var _movie in Model.Where(m => m.ReleaseYear > 2022))
+        {
+            <div class="movies-navbar">
+                <div class="movies-nav"><a href="/movies/getmovie/@_movie.Id"><img src="@Url.Content(_movie.Cover)" alt="Product Image" width="250" height="300" /></a></div>
+                <div class="movies-nav"><a href="/movies/getmovie/@_movie.Id"> @_movie.Name </a></div>
+                <div class="movies-nav"><a> @_movie.Genre </a></div>
+            </div>
+        }
+    </div>
+    
+
 </div>
  
-
-
