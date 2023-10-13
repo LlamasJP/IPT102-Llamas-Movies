@@ -11,11 +11,15 @@
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+}
 html {
   position: relative;
   min-height: 100%;
 }
+
 
 .navbar {
     background-color: Black;
@@ -23,81 +27,170 @@ html {
 
 .navbar-brand h1{
     color: White;
-    font-size:25px;
+    font-size:22px;
+}
+.nav-link{
+    align-items: center;
+    justify-content: center;
 }
 
 body {
     margin-bottom: 60px;
-    background-color: black; 
+    background-color: black;
+    overflow: auto;
 }
-
-
-.navbar-collapse {
+body::-webkit-scrollbar {
+    width: auto;
+    display: none;
 }
-
-    .navbar-collapse a:hover {
-        background-color: #EEEDED;
-    }
     .navbar-collapse p {
-        padding-top: 10px;
         color: white;
         font-size:20px;
     }
-
-
-
-.MovieList {
-    display: flex;
-    text-transform: capitalize;
-    text-align: center;
-    border: 3px solid #000000;
+.p{
+    color: white;
 }
-.movielist-1 {
-    border: 3px solid #000000;
-    padding: 70px 0;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-bottom: 30px;
+
+.form-inline{
+    display: flex;
+    justify-content:space-between;
+    margin-right: 10px;
+}
+.form-inline .btn{
+    color: white;
+    border: 1px solid white;
+    margin-left: 2px;
+}
+.btn-group {
+    display: block;
+    margin-right: 50px;
+}
+.dropdown-item {
+
+}
+.btn-outline-success {
+    margin: 5px;
 }
 .movieCover {
     align-items:center;
     
 }
-.movies-table {
-    width: 100%;  
-}
-iframe {
-    position: absolute;
-    width: 90%;
-    height: 90%;
+video {
+    position: relative;
+    width: 100%;
+
     object-fit: cover;
     margin-top: 20px;
     margin-bottom: 20px;
-    
+    left: 0;
 }
 .back-video {
     height: 100vh;
     width: 100vw;
     position: absolute;
-    left: 0;
+   
 }
 
-.movies-table th {  
-    padding: 8px 12px;
-    background: #ffd7d7;
-}
-
-    .movies-table td {
-        padding: 4px 8px; 
-        text-align: center;
+    .Homepage h1 {
         color: white;
-        font-size:30px;
+        font-size: 22px;
     }
-.movies-table a {
-    color: white;
-    text-decoration:none;
+
+.movies-class1 {
+    position: relative;
+    left: 0px;
+    right: 20px;
+    margin-bottom: 50px;
+    overflow-x: auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
+.movies-class1::-webkit-scrollbar{
+    width: auto;
+}
+.movies-class2 {
+    position: relative;
+    right: 20px;
+    left: 0px;
+    overflow-x: scroll;
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.movies-class2::-webkit-scrollbar {
+    width: auto;
+}
+
+.movies-class3 {
+    position: relative;
+    right: 20px;
+    left: 0px;
+    overflow-x: scroll;
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+    .movies-class3::-webkit-scrollbar {
+        width: auto;
+    }
+
+.movies-class4 {
+    position: relative;
+    right: 20px;
+    left: 0px;
+    overflow-x: scroll;
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+}
+
+    .movies-class4::-webkit-scrollbar {
+        width: auto;
+    }
+.movies-class5 {
+    position: relative;
+    right: 20px;
+    left: 0px;
+    overflow-x: scroll;
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+    .movies-class5::-webkit-scrollbar {
+        width: auto;
+    }
+.movies-navbar {
+    left: 0;
+    width: 6000px;
+   
+}
+.movies-nav {
+    width: 250px;
+    display: block;
+    margin: 0 10px 0 0;
+    text-align: center;
+    color: white;
+}
+    .movies-nav img{
+       
+    
+    }
+    .movies-nav img:hover {
+        border: 3px solid lightblue;
+
+    }
+.movies-nav a {
+    text-decoration: none;
+    color: white;
+}
 .getmovieInfo {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -123,12 +216,11 @@ iframe {
     .getmovieDetails p {
         color: white;
         padding-top: 0px;
+        font-size: 20px;
         
     }
     .getmovieDetails p1 {
-        color: #808080;
-        padding-top: 0px;
-        padding-bottom: 20px;
+        color: #808080;     
     }
 
 .getmovieCover {
@@ -144,13 +236,57 @@ iframe {
         height: 40vh;
         width: 35vh;
     }
-.watchbutton {
+.getmovie-action {
     position: relative;
-    margin-top: 102vh;
+    margin-top: auto;
     display: flex;
     justify-content: center;
 }
 
+.rating {
+    position:absolute;
+    left: 0;
+    padding-top: 3px;
+    color: white;
+    font-size:16px
+}
+    .hover-show, :hover > .hover-hidden
+     {
+        display: none;
+     }
+    :hover > .hover-show{
+        display: inline
+    }
+.button2 a {
+        margin-left: 5px;
+        background-color: black;
+        border: 1px solid white;
+    }
+    .button2 a:hover {
+        margin-left: 5px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+    }
+.adding {
+    position: absolute;
+    right: 0;
+    padding-top: 3px;
+    color: white;
+    font-size: 16px;
+    background-color: black;
+}
+.adding a{
+    color: white;
+    font-size: 16px;
+    background-color: black;
+    border: 1px solid white;
+}
+    .adding a:hover {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+    }
 .getmovieContent {
     margin-top: 15px;
     border: 1px solid black;
@@ -170,3 +306,34 @@ iframe {
         position: relative;
 
     }
+
+footer .container {
+    text-align: center;
+    color: white;
+}
+.footer-link {
+    justify-content:center;
+    display: flex;
+    margin-bottom: 10px;
+}
+    .footer-link ul {
+        padding: 0;
+        
+    }
+    .footer-link li {
+        list-style: none;
+        margin: 10px 20px;
+
+    }
+    .footer-link a {
+        text-decoration: none;
+        list-style: none;
+        color: white;
+    }
+.about-text p{
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto 20px;
+    line-height: 1.5em;
+    font-size: 12px
+}

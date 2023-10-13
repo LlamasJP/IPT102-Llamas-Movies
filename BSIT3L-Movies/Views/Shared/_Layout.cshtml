@@ -27,6 +27,20 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy"><p>Tv Shows</p></a>
                         </li>
                     </ul>
+                    <form class="form-inline my-2 my-sm-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                            Account
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><a class="dropdown-item" href="#">Sign-up</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -39,6 +53,18 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
+            <ul class="footer-link">
+                <li><a href="" title="Terms of service" class="keychainify-checked">Terms of service</a></li> 
+                <li><a href="" title="Contact" class="keychainify-checked">Contact</a></li> 
+                <li><a href="/faq" title="FAQ" class="keychainify-checked">FAQ</a></li>
+            </ul>
+            <div class="about-text">
+                <p>
+                    Llamas123MOvies is a Free Movies streaming site with zero ads.
+                    We let you watch movies online without having to register or paying, with over 10000 movies and TV-Series.
+                    You can also Download full movies from MoviesCloud and watch it later if you want.
+                </p>
+            </div>
             &copy; 2023 - Llamas123Movies - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
